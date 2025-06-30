@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: 01.3.PostgresRest
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/pdabatch-1
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+    defer-datasource-initialization: true
+
+  data:
+    jpa:
+      repositories:
+        bootstrap-mode: default
+
+server:
+  port: 8081
